@@ -1,0 +1,10 @@
+# app-ads.txt for Hyperfocus (Google AdMob)
+#
+# TODO before publishing: replace pub-2419222512613295 below with YOUR publisher ID from AdMob.
+# Find it in AdMob > Settings > Account information > Publisher ID, or copy the ready-made line from
+# AdMob > Apps > View all apps > app-ads.txt > "How to set up app-ads.txt".
+# Keep the rest of the line exactly as it is. Lines that start with # are comments and are ignored.
+#
+# This file only counts at the ROOT of the website you enter as "Website" in your Play Console store listing,
+# for example https://YOUR-GITHUB-USERNAME.github.io/app-ads.txt (see README.md).
+google.com, pub-2419222512613295, DIRECT, f08c47fec0942fa0

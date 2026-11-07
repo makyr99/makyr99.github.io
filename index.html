@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hyperfocus: 60+ mini games in one app</title>
+  <meta name="description" content="Hyperfocus packs 60+ bite-sized games into one Android app: squad battles, era wars, tower defense, pin puzzles and brain teasers. Plays offline, no sign-in.">
+  <meta name="theme-color" content="#FF70A6">
+  <!--
+    Before publishing, replace the two placeholders in this file:
+      https://play.google.com/store/apps/details?id=com.makyr.hyperfocus  -> your app's Google Play address, e.g. https://play.google.com/store/apps/details?id=com.makyr.hyperfocus
+      hyperfocusgames.support@gmail.com   -> the contact email you also put in privacy.html
+    Everything this page needs is in this folder (font, screenshots); it loads nothing from other websites.
+  -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='28' fill='%23FF70A6'/%3E%3Cg transform='translate(13 14) scale(0.78)'%3E%3Cpath d='M60 22 C61 13 66 8 74 6' fill='none' stroke='%231D1A2F' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M77 1.5 L70 9.5 L75 9.5 L71 16.5 L80 7.5 L75 7.5 Z' fill='%23FF9F1C' stroke='%231D1A2F' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M60 20 C89 20 105 40 105 66 C105 94 87 110 60 110 C33 110 15 94 15 66 C15 40 31 20 60 20 Z' fill='%23FFD23F' stroke='%231D1A2F' stroke-width='5'/%3E%3Cellipse cx='45' cy='58' rx='12' ry='14' fill='%23fff' stroke='%231D1A2F' stroke-width='4'/%3E%3Cellipse cx='75' cy='58' rx='12' ry='14' fill='%23fff' stroke='%231D1A2F' stroke-width='4'/%3E%3Ccircle cx='46' cy='60' r='6' fill='%231D1A2F'/%3E%3Ccircle cx='76' cy='60' r='6' fill='%231D1A2F'/%3E%3Cpath d='M45 76 Q60 99 75 76 Z' fill='%231D1A2F' stroke='%231D1A2F' stroke-width='4' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: 'Brico'; src: url('BricolageGrotesque.ttf') format('truetype'); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; }
+    :root {
+      --bg: #FFF3DC; --bg2: #FFE5BA; --paper: #FFFFFF; --ink: #1D1A2F; --muted: #5E5873;
+      --red: #FF5D5D; --orange: #FF9F1C; --yellow: #FFD23F; --green: #3DDC97; --blue: #4D96FF; --purple: #9B5DE5; --pink: #FF70A6; --teal: #2EC4B6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 17px/1.55 'Brico', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-variation-settings: 'opsz' 24;
+    }
+    a { color: inherit; text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 18px; }
+    .display { font-weight: 800; font-stretch: 80%; line-height: 1; letter-spacing: .005em; }
+    .sticker { background: var(--paper); border: 3px solid var(--ink); border-radius: 18px; box-shadow: 5px 5px 0 var(--ink); }
+
+    /* hero */
+    .hero { background: var(--pink); border-bottom: 3px solid var(--ink); padding: 34px 0 44px; position: relative; overflow: hidden; }
+    .hero .wrap { position: relative; z-index: 1; display: grid; gap: 30px; align-items: center; }
+    .brand { display: flex; align-items: flex-end; gap: 6px; margin-bottom: 18px; }
+    .brand svg { width: 92px; height: 92px; flex: none; transform: rotate(-6deg); }
+    .logo { margin: 0; display: inline-block; padding: 6px 20px 12px; font-size: clamp(52px, 11vw, 84px); transform: rotate(-3deg); border-radius: 22px; box-shadow: 7px 7px 0 var(--ink); }
+    .tag { display: inline-block; margin: 20px 0 0; padding: 6px 14px 8px; background: var(--yellow); border: 3px solid var(--ink); border-radius: 14px; box-shadow: 4px 4px 0 var(--ink); font-size: 21px; transform: rotate(1.5deg); }
+    .pitch { font-size: 19px; font-weight: 600; max-width: 34em; margin: 22px 0 0; }
+    .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 26px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px 15px; border: 3px solid var(--ink); border-radius: 16px;
+      background: var(--green); color: var(--ink); box-shadow: 5px 5px 0 var(--ink); font-weight: 800; font-stretch: 85%; font-size: 22px;
+      line-height: 1; text-decoration: none; transition: transform .08s, box-shadow .08s;
+    }
+    .btn:hover { transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--ink); }
+    .btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+    .btn svg { width: 22px; height: 22px; flex: none; }
+    .btn small { display: block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
+    .facts-line { font-size: 15px; font-weight: 700; }
+    .confetti { position: absolute; opacity: .28; pointer-events: none; }
+    .hero-shot { justify-self: center; width: min(78vw, 300px); transform: rotate(3deg); }
+    .hero-shot img { display: block; width: 100%; height: auto; border: 3px solid var(--ink); border-radius: 22px; box-shadow: 8px 8px 0 var(--ink); }
+    @media (min-width: 820px) {
+      .hero { padding: 54px 0 64px; }
+      .hero .wrap { grid-template-columns: 1.25fr .75fr; }
+    }
+
+    /* sections */
+    section { padding: 48px 0 8px; }
+    h2 { margin: 0 0 18px; font-size: clamp(34px, 6vw, 46px); }
+    h2 span { display: inline-block; padding: 4px 14px 8px; transform: rotate(-1.5deg); }
+    .shots { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 4px 22px; margin: 0 -4px; }
+    .shots figure { margin: 0; flex: 0 0 min(64vw, 236px); scroll-snap-align: start; }
+    .shots img { display: block; width: 100%; height: auto; border: 3px solid var(--ink); border-radius: 18px; box-shadow: 5px 5px 0 var(--ink); background: var(--paper); }
+    @media (min-width: 1000px) { .shots { overflow: visible; } .shots figure { flex: 1 1 0; } }
+
+    .games { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .game { padding: 16px 18px 18px; }
+    .game h3 { margin: 0 0 6px; font-size: 27px; }
+    .game p { margin: 0; font-weight: 600; color: var(--muted); }
+    .game .chip { display: inline-block; margin-bottom: 10px; padding: 2px 10px 4px; border: 2.5px solid var(--ink); border-radius: 999px; font-size: 13px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+    .more { margin: 22px 0 0; font-weight: 700; font-size: 18px; }
+
+    .list { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); padding: 0; margin: 0; list-style: none; }
+    .list li { padding: 12px 16px 13px 50px; position: relative; font-weight: 600; }
+    .list li::before { content: ''; position: absolute; left: 14px; top: 14px; width: 22px; height: 22px; border-radius: 7px; border: 2.5px solid var(--ink); background: var(--c, var(--yellow)); }
+    .note { margin: 22px 0 0; padding: 16px 18px; font-weight: 600; }
+    .note b { font-weight: 800; }
+
+    footer { margin-top: 56px; background: var(--ink); color: #F4F0FF; padding: 30px 0 38px; }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 10px 22px; font-weight: 700; }
+    footer a { text-decoration-color: var(--pink); }
+    footer small { color: #B7B0CF; font-size: 14px; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- background confetti, the same shapes as the app's background -->
+  <svg class="confetti" style="left:4%;top:10%;width:46px;height:46px" viewBox="0 0 40 40" fill="#fff" aria-hidden="true"><circle cx="20" cy="20" r="14"/></svg>
+  <svg class="confetti" style="left:46%;top:6%;width:38px;height:38px;transform:rotate(20deg)" viewBox="0 0 40 40" fill="#fff" aria-hidden="true"><path d="M6 32 L20 6 L34 32 Z"/></svg>
+  <svg class="confetti" style="right:5%;top:8%;width:44px;height:44px;transform:rotate(-14deg)" viewBox="0 0 40 40" fill="#fff" aria-hidden="true"><rect x="7" y="7" width="26" height="26" rx="7"/></svg>
+  <svg class="confetti" style="left:8%;bottom:8%;width:52px;height:52px" viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" aria-hidden="true"><path d="M4 20 Q12 8 20 20 T36 20"/></svg>
+  <svg class="confetti" style="right:42%;bottom:6%;width:40px;height:40px" viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" aria-hidden="true"><path d="M20 4v32M4 20h32"/></svg>
+
+  <div class="wrap">
+    <div>
+      <div class="brand">
+        <!-- Zip, the mascot (same drawing as the app) -->
+        <svg viewBox="0 0 120 120" role="img" aria-label="Zip, the Hyperfocus mascot">
+          <path d="M60 22 C61 13 66 8 74 6" fill="none" stroke="#1D1A2F" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M77 1.5 L70 9.5 L75 9.5 L71 16.5 L80 7.5 L75 7.5 Z" fill="#FF9F1C" stroke="#1D1A2F" stroke-width="2.6" stroke-linejoin="round"/>
+          <path d="M60 20 C89 20 105 40 105 66 C105 94 87 110 60 110 C33 110 15 94 15 66 C15 40 31 20 60 20 Z" fill="#FFD23F" stroke="#1D1A2F" stroke-width="5"/>
+          <path d="M31 50 C33 38 42 31 52 29" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="34" cy="76" rx="7.5" ry="4.5" fill="#FF70A6" opacity=".75"/>
+          <ellipse cx="86" cy="76" rx="7.5" ry="4.5" fill="#FF70A6" opacity=".75"/>
+          <ellipse cx="45" cy="58" rx="12" ry="14" fill="#FFFFFF" stroke="#1D1A2F" stroke-width="4"/>
+          <ellipse cx="75" cy="58" rx="12" ry="14" fill="#FFFFFF" stroke="#1D1A2F" stroke-width="4"/>
+          <circle cx="46" cy="60" r="6" fill="#1D1A2F"/><circle cx="76" cy="60" r="6" fill="#1D1A2F"/>
+          <circle cx="48" cy="57.5" r="2" fill="#FFFFFF"/><circle cx="78" cy="57.5" r="2" fill="#FFFFFF"/>
+          <path d="M45 76 Q60 99 75 76 Z" fill="#1D1A2F" stroke="#1D1A2F" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M53 87 Q60 83 67 87 Q60 94 53 87Z" fill="#FF70A6"/>
+        </svg>
+      </div>
+      <h1 class="logo display sticker">Hyperfocus</h1>
+      <div><p class="tag display">Puzzles for brains that won't sit still.</p></div>
+      <p class="pitch">60+ bite-sized games in one app. Every run takes about a minute, there are no loading screens or
+        tutorials to sit through, and the game you didn't know you needed is one SHUFFLE away.</p>
+      <div class="cta">
+        <!-- Replace https://play.google.com/store/apps/details?id=com.makyr.hyperfocus with the Google Play address of the app once it is live. -->
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.makyr.hyperfocus">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="#1D1A2F"/></svg>
+          <span><small>Get it on</small>Google Play</span>
+        </a>
+        <span class="facts-line">Android · Plays offline · No account, no sign-in</span>
+      </div>
+    </div>
+    <div class="hero-shot"><img src="shot-hub.png" width="540" height="960" alt="The Hyperfocus game list: Today's picks and cards for Squad Rush, Pull It!, Gulp, Era Siege, Spire Guard and Block Party, 62 of 62 games unlocked."></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="see">
+    <h2 id="see" class="display"><span class="sticker">See it in action</span></h2>
+    <div class="shots">
+      <figure><img src="shot-boss.png" width="540" height="960" loading="lazy" alt="Squad Rush: a squad of 229 soldiers fights the Frost Yeti boss in phase 2."></figure>
+      <figure><img src="shot-spire.png" width="540" height="960" loading="lazy" alt="Spire Guard: towers and a Firestorm hold off a line of Gloomlings on a jungle road."></figure>
+      <figure><img src="shot-cannon.png" width="540" height="960" loading="lazy" alt="Mob Cannon: a stream of blobs through x3 and +10 gates crushes a sand fortress down to 19%."></figure>
+      <figure><img src="shot-map.png" width="540" height="960" loading="lazy" alt="Spire Guard world map: six lands, four Spires already lit, Baron Gloam's citadel at the top."></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="games">
+    <h2 id="games" class="display"><span class="sticker">The big four</span></h2>
+    <div class="games">
+      <article class="game sticker"><span class="chip" style="background:var(--blue)">Runner</span><h3 class="display">Squad Rush</h3><p>Pick the right gate, grow your squad, and beat the boss at the end of the road.</p></article>
+      <article class="game sticker"><span class="chip" style="background:var(--teal)">Cannon</span><h3 class="display">Mob Cannon</h3><p>Fire a stream of blobs through multiplier gates and bring the fortress down.</p></article>
+      <article class="game sticker"><span class="chip" style="background:var(--orange)">Battle</span><h3 class="display">Era Siege</h3><p>Send troops down the lane and evolve from clubs to lasers mid-battle.</p></article>
+      <article class="game sticker"><span class="chip" style="background:var(--green)">Tower defense</span><h3 class="display">Spire Guard</h3><p>Build towers, move your hero and save six glowing Spires from Baron Gloam.</p></article>
+    </div>
+    <p class="more">Plus Block Party, Pull It!, Gulp, Pour Decisions, Chimp Mode, Color Lies, Pop Off and dozens more puzzle,
+      brain, reflex and chill games.</p>
+  </section>
+
+  <section aria-labelledby="why">
+    <h2 id="why" class="display"><span class="sticker">Made to pick up</span></h2>
+    <ul class="list">
+      <li class="sticker" style="--c:var(--yellow)">New games unlock as you level up, three at a time.</li>
+      <li class="sticker" style="--c:var(--pink)">Upgrades, weapons, heroes and a new map every 4 levels.</li>
+      <li class="sticker" style="--c:var(--green)">Daily missions, a daily chest and a streak that forgives a missed day.</li>
+      <li class="sticker" style="--c:var(--blue)">Color-blind symbols, reduce-motion mode and optional break reminders.</li>
+      <li class="sticker" style="--c:var(--purple)">Unlockable color themes, including a dark Neon Night theme.</li>
+      <li class="sticker" style="--c:var(--orange)">Plays offline. No account, no sign-in.</li>
+    </ul>
+    <p class="note sticker"><b>Free to play.</b> Hyperfocus shows ads and has optional in-app purchases (coin packs, revive
+      tokens, a starter pack and VIP). Nothing for sale is random, and every level can be beaten without paying. Watching an
+      ad for a revive, a hint or double coins is always optional. Made for players aged 14 and up.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Legal and contact">
+      <a href="privacy.html">Privacy policy</a>
+      <!-- Replace hyperfocusgames.support@gmail.com with your contact address (the same one as in privacy.html). -->
+      <a href="mailto:hyperfocusgames.support@gmail.com">Contact</a>
+      <a href="https://play.google.com/store/apps/details?id=com.makyr.hyperfocus">Google Play</a>
+    </nav>
+    <small>Hyperfocus · Android</small>
+  </div>
+</footer>
+
+</body>
+</html>
