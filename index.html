@@ -4,14 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hyperfocus: 60+ mini games in one app</title>
-  <meta name="description" content="Hyperfocus packs 60+ bite-sized games into one Android app: squad battles, era wars, tower defense, pin puzzles and brain teasers. Plays offline, no sign-in.">
+  <meta name="description" content="Hyperfocus packs 60+ bite-sized games into one app for Android and iPhone: squad battles, era wars, tower defense, pin puzzles and brain teasers. Plays offline, no sign-in.">
   <meta name="theme-color" content="#FF70A6">
-  <!--
-    Before publishing, replace the two placeholders in this file:
-      https://play.google.com/store/apps/details?id=com.makyr.hyperfocus  -> your app's Google Play address, e.g. https://play.google.com/store/apps/details?id=com.makyr.hyperfocus
-      hyperfocusgames.support@gmail.com   -> the contact email you also put in privacy.html
-    Everything this page needs is in this folder (font, screenshots); it loads nothing from other websites.
-  -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='28' fill='%23FF70A6'/%3E%3Cg transform='translate(13 14) scale(0.78)'%3E%3Cpath d='M60 22 C61 13 66 8 74 6' fill='none' stroke='%231D1A2F' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M77 1.5 L70 9.5 L75 9.5 L71 16.5 L80 7.5 L75 7.5 Z' fill='%23FF9F1C' stroke='%231D1A2F' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M60 20 C89 20 105 40 105 66 C105 94 87 110 60 110 C33 110 15 94 15 66 C15 40 31 20 60 20 Z' fill='%23FFD23F' stroke='%231D1A2F' stroke-width='5'/%3E%3Cellipse cx='45' cy='58' rx='12' ry='14' fill='%23fff' stroke='%231D1A2F' stroke-width='4'/%3E%3Cellipse cx='75' cy='58' rx='12' ry='14' fill='%23fff' stroke='%231D1A2F' stroke-width='4'/%3E%3Ccircle cx='46' cy='60' r='6' fill='%231D1A2F'/%3E%3Ccircle cx='76' cy='60' r='6' fill='%231D1A2F'/%3E%3Cpath d='M45 76 Q60 99 75 76 Z' fill='%231D1A2F' stroke='%231D1A2F' stroke-width='4' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
   <style>
     @font-face { font-family: 'Brico'; src: url('BricolageGrotesque.ttf') format('truetype'); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; }
@@ -47,6 +41,8 @@
     .btn:hover { transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--ink); }
     .btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
     .btn svg { width: 22px; height: 22px; flex: none; }
+    .btn.soon { background: var(--paper); cursor: default; }
+    .btn.soon:hover, .btn.soon:active { transform: none; box-shadow: 5px 5px 0 var(--ink); }
     .btn small { display: block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
     .facts-line { font-size: 15px; font-weight: 700; }
     .confetti { position: absolute; opacity: .28; pointer-events: none; }
@@ -122,12 +118,15 @@
       <p class="pitch">60+ bite-sized games in one app. Every run takes about a minute, there are no loading screens or
         tutorials to sit through, and the game you didn't know you needed is one SHUFFLE away.</p>
       <div class="cta">
-        <!-- Replace https://play.google.com/store/apps/details?id=com.makyr.hyperfocus with the Google Play address of the app once it is live. -->
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.makyr.hyperfocus">
+        <span class="btn soon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="#1D1A2F"/></svg>
-          <span><small>Get it on</small>Google Play</span>
-        </a>
-        <span class="facts-line">Android · Plays offline · No account, no sign-in</span>
+          <span><small>Coming soon on</small>Google Play</span>
+        </span>
+        <span class="btn soon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6" fill="none" stroke="#1D1A2F" stroke-width="2.2"/><path d="M10.5 18.2h3" stroke="#1D1A2F" stroke-width="2" stroke-linecap="round"/></svg>
+          <span><small>Coming soon on</small>App Store</span>
+        </span>
+        <span class="facts-line">Android &amp; iPhone · Plays offline · No account, no sign-in</span>
       </div>
     </div>
     <div class="hero-shot"><img src="shot-hub.png" width="540" height="960" alt="The Hyperfocus game list: Today's picks and cards for Squad Rush, Pull It!, Gulp, Era Siege, Spire Guard and Block Party, 62 of 62 games unlocked."></div>
@@ -177,11 +176,9 @@
   <div class="wrap">
     <nav aria-label="Legal and contact">
       <a href="privacy.html">Privacy policy</a>
-      <!-- Replace hyperfocusgames.support@gmail.com with your contact address (the same one as in privacy.html). -->
       <a href="mailto:hyperfocusgames.support@gmail.com">Contact</a>
-      <a href="https://play.google.com/store/apps/details?id=com.makyr.hyperfocus">Google Play</a>
     </nav>
-    <small>Hyperfocus · Android</small>
+    <small>Hyperfocus · Android &amp; iPhone</small>
   </div>
 </footer>
 
